@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★ANONYMOOSEHUB!★</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAKklEQVQoU2NkYGD4z4AFMGEB/1ERoxoxKxmZcCnC5QdkNrq7cPkBXQ0ALy4FA/LIO9gAAAAASUVORK5CYII=');
+            color: #00ff00;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .marquee-container {
+            background: #000;
+            border: 3px solid #ff0000;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px #ff0000;
+        }
+
+        marquee {
+            color: #ffff00;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(to bottom, #0066cc, #003366);
+            border: 5px ridge #6699cc;
+            padding: 20px;
+            box-shadow: 5px 5px 0px #000;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffff00;
+            text-shadow: 
+                3px 3px 0px #ff0000,
+                -1px -1px 0px #00ff00,
+                2px 2px 10px #000;
+            margin-bottom: 10px;
+            font-family: Impact, sans-serif;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .rainbow {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card {
+            background: #2a2a2a;
+            border: 3px outset #666;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 0px #000;
+        }
+
+        .card-header {
+            background: linear-gradient(to bottom, #3366cc, #1a4d8f);
+            color: white;
+            padding: 8px;
+            margin: -20px -20px 15px -20px;
+            border-bottom: 2px solid #fff;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .label {
+            color: #00ffff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .code-box {
+            background: #000;
+            border: 3px inset #666;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #00ff00;
+            word-break: break-all;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 3px outset #999;
+            cursor: pointer;
+            background: linear-gradient(to bottom, #cccccc, #999999);
+            color: #000;
+            text-decoration: none;
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to bottom, #ffffff, #cccccc);
+        }
+
+        .btn:active {
+            border-style: inset;
+            box-shadow: 1px 1px 0px #000;
+            transform: translate(2px, 2px);
+        }
+
+        .btn-green {
+            background: linear-gradient(to bottom, #66ff66, #00cc00);
+            color: #000;
+        }
+
+        .btn-green:hover {
+            background: linear-gradient(to bottom, #99ff99, #00ff00);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ffff00;
+            color: #000;
+            padding: 15px 20px;
+            border: 3px solid #000;
+            font-weight: bold;
+            box-shadow: 5px 5px 0px #000;
+            transform: translateX(500px);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #000;
+            border: 3px double #00ff00;
+            color: #00ff00;
+        }
+
+        .visitor-counter {
+            background: #000;
+            border: 2px solid #ff0000;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .construction {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .gif-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .rotating {
+            animation: rotate 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 32px;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-container">
+        <marquee>
+            <span class="blink">★★★</span> WELCOME TO THE #1 ROBLOX SCRIPT HUB ANONYMOOSE HUB!!!
+            <span class="blink">★★★</span> FREE SCRIPTS!!! 
+            <span class="blink">★★★</span> NO VIRUS!!! 
+            <span class="blink">★★★</span> 100% WORKING!!! 
+            <span class="blink">★★★</span> IN DEVELOPMENT!!!
+        </marquee>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 class="title">
+                <span class="blink">★</span> 
+                ANONYMOOSE HUB
+                <span class="blink">★</span>
+            </h1>
+            <p class="subtitle">
+                <span class="rainbow">✿ THE BEST FUCKING SCRIPT HUB EVER!!!!!!!!!!!!!!! ✿</span>
+            </p>
+            <div class="visitor-counter">
+                VISITOR COUNT: <span class="blink">★ 987,523,256.5 ★</span>
+            </div>
+        </div>
+
+        <div class="gif-container">
+            <img src="data:image/gif;base64,R0lGODlhHAAcAKECAAAAAP///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJCgACACwAAAAAHAAcAAACQZSPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+s73/g8MCofEovGITCqXzKbzCY1Kp9Sq9YrNEgAAOw==" 
+                 alt="Under Construction" width="28" height="28" class="construction rotating">
+            <span style="color: #ffff00; font-weight: bold;">UNDER CONSTRUCTION</span>
+            <img src="data:image/gif;base64,R0lGODlhHAAcAKECAAAAAP///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQJCgACACwAAAAAHAAcAAACQZSPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9o3n+s73/g8MCofEovGITCqXzKbzCY1Kp9Sq9YrNEgAAOw==" 
+                 alt="Under Construction" width="28" height="28" class="construction rotating">
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                💾 LOADSTRING CODE 💾
+            </div>
+            <div class="label">
+                <span class="blink">►</span> COPY THIS CODE BELOW:
+            </div>
+            <div class="code-box" id="codeBox">loadstring(game:HttpGet("https://raw.githubusercontent.com/zaxcccsdx/anonymoose-hub/refs/heads/main/anonymoose.lua"))()</div>
+            
+            <div class="button-container">
+                <button class="btn btn-green" onclick="copyCode()">
+                    <span id="btnText">📋 COPY CODE</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="margin: 10px 0;">ANONYMOOSE HUB</p>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        ✓ CODE COPIED TO CLIPBOARD!!!
+    </div>
+
+    <script>
+        function copyCode() {
+            const codeBox = document.getElementById('codeBox');
+            const text = codeBox.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification('✓ CODE COPIED TO CLIPBOARD!!!');
+                
+                // Visual feedback on button
+                const btnText = document.getElementById('btnText');
+                const originalText = btnText.textContent;
+                btnText.textContent = '✓ COPIED!!!';
+                
+                setTimeout(() => {
+                    btnText.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.opacity = '0';
+                document.body.appendChild(textArea);
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                    showNotification('✓ CODE COPIED TO CLIPBOARD!!!');
+                } catch (err) {
+                    alert('FAILED TO COPY! TRY AGAIN!!!');
+                }
+                
+                document.body.removeChild(textArea);
+            });
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
